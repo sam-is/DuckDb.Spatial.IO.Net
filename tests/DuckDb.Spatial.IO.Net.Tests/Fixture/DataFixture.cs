@@ -1,6 +1,6 @@
 ﻿using NetTopologySuite.Geometries;
 
-namespace DuckDb.Spatial.Tests.Fixture;
+namespace DuckDb.Spatial.IO.Net.Tests.Fixture;
 
 public class DataFixture
 {

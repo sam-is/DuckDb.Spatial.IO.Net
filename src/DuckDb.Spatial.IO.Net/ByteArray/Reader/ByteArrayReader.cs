@@ -1,7 +1,7 @@
-﻿using DuckDb.Spatial.Extension;
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
+using DuckDb.Spatial.IO.Net.Extension;
 
-namespace DuckDb.Spatial.ByteArray.Reader;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Reader;
 
 public class ByteArrayReader(bool isLittleEndian) : IReader
 {

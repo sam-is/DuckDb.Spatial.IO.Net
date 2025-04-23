@@ -1,8 +1,8 @@
-﻿using DuckDb.Spatial.Extension;
-using System.Buffers;
+﻿using System.Buffers;
 using System.Runtime.InteropServices;
+using DuckDb.Spatial.IO.Net.Extension;
 
-namespace DuckDb.Spatial.ByteArray.Writer;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
 class StreamWriter : IWriter
 {

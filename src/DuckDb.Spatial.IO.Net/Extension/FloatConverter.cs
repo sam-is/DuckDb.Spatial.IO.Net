@@ -1,4 +1,4 @@
-﻿namespace DuckDb.Spatial.Extension;
+﻿namespace DuckDb.Spatial.IO.Net.Extension;
 
 public static class FloatConverter
 {

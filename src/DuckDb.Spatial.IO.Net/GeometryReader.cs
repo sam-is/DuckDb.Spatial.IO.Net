@@ -1,8 +1,8 @@
-﻿using DuckDb.Spatial.ByteArray.Reader;
+﻿using DuckDb.Spatial.IO.Net.ByteArray.Reader;
 using NetTopologySuite.Geometries;
-using StreamReader = DuckDb.Spatial.ByteArray.Reader.StreamReader;
+using StreamReader = DuckDb.Spatial.IO.Net.ByteArray.Reader.StreamReader;
 
-namespace DuckDb.Spatial;
+namespace DuckDb.Spatial.IO.Net;
 
 public class GeometryReader(bool isLittleEndian = true)
 {

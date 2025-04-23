@@ -1,4 +1,4 @@
-﻿namespace DuckDb.Spatial.ByteArray.Writer;
+﻿namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
 interface IWriter : IDisposable
 {

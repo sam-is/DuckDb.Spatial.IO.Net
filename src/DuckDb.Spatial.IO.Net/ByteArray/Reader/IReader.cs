@@ -1,4 +1,4 @@
-﻿namespace DuckDb.Spatial.ByteArray.Reader;
+﻿namespace DuckDb.Spatial.IO.Net.ByteArray.Reader;
 
 interface IReader
 {

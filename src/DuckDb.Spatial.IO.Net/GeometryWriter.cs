@@ -1,10 +1,10 @@
-﻿using DuckDb.Spatial.ByteArray.Writer;
-using DuckDb.Spatial.Extension;
+﻿using System.Buffers;
+using DuckDb.Spatial.IO.Net.ByteArray.Writer;
+using DuckDb.Spatial.IO.Net.Extension;
 using NetTopologySuite.Geometries;
-using System.Buffers;
-using StreamWriter = DuckDb.Spatial.ByteArray.Writer.StreamWriter;
+using StreamWriter = DuckDb.Spatial.IO.Net.ByteArray.Writer.StreamWriter;
 
-namespace DuckDb.Spatial
+namespace DuckDb.Spatial.IO.Net
 {
     public class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1, ArrayPool<byte>? pool = null) : IDisposable
     {

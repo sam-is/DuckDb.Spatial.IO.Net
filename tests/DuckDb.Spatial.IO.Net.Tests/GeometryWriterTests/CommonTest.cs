@@ -1,6 +1,6 @@
-﻿using DuckDb.Spatial.Tests.Fixture;
+﻿using DuckDb.Spatial.IO.Net.Tests.Fixture;
 
-namespace DuckDb.Spatial.Tests.GeometryWriterTests;
+namespace DuckDb.Spatial.IO.Net.Tests.GeometryWriterTests;
 
 public class CommonTest(ServiceFixture fixture, DataFixture dataFixture) : IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
 {
