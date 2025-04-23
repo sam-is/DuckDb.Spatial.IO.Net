@@ -1,6 +1,6 @@
 ﻿namespace DuckDb.Spatial.IO.Net.Extension;
 
-public static class ByteArrayExtensions
+internal static class ByteArrayExtensions
 {
     public static T ReverseEndian<T>(T value) where T : unmanaged => typeof(T) switch
     {

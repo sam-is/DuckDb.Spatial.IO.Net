@@ -1,6 +1,6 @@
 ﻿namespace DuckDb.Spatial.IO.Net.Extension;
 
-public static class FloatConverter
+internal static class FloatConverter
 {
     public static float DoubleToFloatDown(double d)
     {

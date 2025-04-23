@@ -4,7 +4,7 @@ using DuckDb.Spatial.IO.Net.Extension;
 
 namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
-class StreamWriter : IWriter
+internal class StreamWriter : IWriter
 {
     private Stream? _stream;
     private readonly bool _isLittleEndian;

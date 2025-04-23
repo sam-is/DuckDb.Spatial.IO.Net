@@ -4,7 +4,7 @@ using DuckDb.Spatial.IO.Net.Extension;
 
 namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
-public class ByteArrayWriter : IWriter
+internal class ByteArrayWriter : IWriter
 {
     private readonly bool _isLittleEndian;
     private byte[] _buffer;

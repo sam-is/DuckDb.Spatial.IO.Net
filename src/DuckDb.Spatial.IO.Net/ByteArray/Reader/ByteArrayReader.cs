@@ -3,7 +3,7 @@ using DuckDb.Spatial.IO.Net.Extension;
 
 namespace DuckDb.Spatial.IO.Net.ByteArray.Reader;
 
-public class ByteArrayReader(bool isLittleEndian) : IReader
+internal class ByteArrayReader(bool isLittleEndian) : IReader
 {
     private int _offset;
     private byte[] _data = [];
