@@ -1,0 +1,32 @@
+name: Publish nuget package
+
+on:
+  release:
+    types: [created]  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+   
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+        source-url: https://api.nuget.org/v3/index.json 
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}        
+    - name: Restore dependencies
+      run: dotnet restore DuckDb.Spatial.IO.Net.sln
+    - name: Build
+      run: dotnet build -c Release --no-restore DuckDb.Spatial.IO.Net.sln
+    - name: Pack
+      run: |
+        mkdir artifacts 
+        dotnet pack -c Release -o artifacts --no-restore src/DuckDb.Spatial.IO.Net/DuckDb.Spatial.IO.Net.csproj -p:PackageVersion=${{ github.event.release.tag_name }}        
+    - name: Publish          
+      run: |        
+        dotnet nuget push "./artifacts/*.nupkg" --skip-duplicate --api-key ${{secrets.NUGET_API_KEY}}
+        rm -rf artifacts
