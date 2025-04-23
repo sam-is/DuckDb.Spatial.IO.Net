@@ -5,7 +5,7 @@ namespace DuckDb.Spatial.IO.Net.ByteArray.Reader;
 
 public class ByteArrayReader(bool isLittleEndian) : IReader
 {
-    private int _offset = 0;
+    private int _offset;
     private byte[] _data = [];
 
     public T Read<T>() where T : unmanaged

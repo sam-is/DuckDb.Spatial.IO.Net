@@ -4,27 +4,41 @@ public static class FloatConverter
 {
     public static float DoubleToFloatDown(double d)
     {
-        if (d > float.MaxValue) return float.MaxValue;
-        if (d <= float.MinValue) return float.MinValue;
-
-        float converted = (float)d;
-        return (double)converted <= d
-            ? converted
-            : NextAfter(converted, float.MinValue);
+        switch (d)
+        {
+            case > float.MaxValue:
+                return float.MaxValue;
+            case <= float.MinValue:
+                return float.MinValue;
+            default:
+            {
+                var converted = (float)d;
+                return (double)converted <= d
+                    ? converted
+                    : NextAfter(converted, float.MinValue);
+            }
+        }
     }
 
     public static float DoubleToFloatUp(double d)
     {
-        if (d >= float.MaxValue) return float.MaxValue;
-        if (d < float.MinValue) return float.MinValue;
-
-        float converted = (float)d;
-        return (double)converted >= d
-            ? converted
-            : NextAfter(converted, float.MaxValue);
+        switch (d)
+        {
+            case >= float.MaxValue:
+                return float.MaxValue;
+            case < float.MinValue:
+                return float.MinValue;
+            default:
+            {
+                float converted = (float)d;
+                return (double)converted >= d
+                    ? converted
+                    : NextAfter(converted, float.MaxValue);
+            }
+        }
     }
 
-    public static float NextAfter(float x, float y)
+    private static float NextAfter(float x, float y)
     {
         if (float.IsNaN(x) || float.IsNaN(y))
             return x + y;

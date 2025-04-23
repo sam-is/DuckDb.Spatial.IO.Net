@@ -22,7 +22,7 @@ class StreamWriter : IWriter
 
     public void Write<T>(T value) where T : unmanaged
     {
-        int size = Marshal.SizeOf<T>();
+        var size = Marshal.SizeOf<T>();
         EnsureBuffer(size);
 
         if (BitConverter.IsLittleEndian != _isLittleEndian)
