@@ -2,6 +2,8 @@
 
 This library provides a seamless way to convert geometries between DuckDB's internal geometry format and NetTopologySuite (NTS) geometries in C#. It supports reading and writing geometries from/to byte arrays and streams, making it easy to integrate with DuckDB databases and work with spatial data in .NET applications.
 
+[![Nuget](https://img.shields.io/nuget/v/DuckDb.Spatial.IO.Net)](https://www.nuget.org/packages/DuckDb.Spatial.IO.Net/)
+
 ## Installation
 
 You can install the library via NuGet:
