@@ -10,6 +10,7 @@
     <Copyright>Copyright © 2025 Samara-Informsputnik</Copyright>
     <RepositoryUrl>https://github.com/sam-is/DuckDb.Spatial.IO.Net</RepositoryUrl>
     <PackageProjectUrl>https://github.com/sam-is/DuckDb.Spatial.IO.Net</PackageProjectUrl>
+    <Description>This library provides a seamless way to convert geometries between DuckDB's internal geometry format and NetTopologySuite (NTS) geometries</Description>
   </PropertyGroup>
 
   <ItemGroup>
