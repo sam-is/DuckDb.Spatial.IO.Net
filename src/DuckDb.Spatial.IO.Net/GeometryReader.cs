@@ -4,7 +4,7 @@ using StreamReader = DuckDb.Spatial.IO.Net.ByteArray.Reader.StreamReader;
 
 namespace DuckDb.Spatial.IO.Net;
 
-public class GeometryReader(bool isLittleEndian = true)
+public sealed class GeometryReader(bool isLittleEndian = true)
 {
     private const byte FlagHasZ = 0x01;
     private const byte FlagHasM = 0x02;

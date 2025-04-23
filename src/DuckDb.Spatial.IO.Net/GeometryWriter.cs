@@ -6,12 +6,12 @@ using StreamWriter = DuckDb.Spatial.IO.Net.ByteArray.Writer.StreamWriter;
 
 namespace DuckDb.Spatial.IO.Net;
 
-public class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1, ArrayPool<byte>? pool = null) : IDisposable
+public sealed class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1, ArrayPool<byte>? pool = null) : IDisposable
 {
     private const byte FlagHasZ = 0x01;
     private const byte FlagHasM = 0x02;
     private const byte FlagHasBbox = 0x04;
-    private const byte GeometryVersion = 0;
+    private const byte GeometryVersion = 0x00;
 
     private IWriter _writer = new ByteArrayWriter(isLittleEndian, initialCapacity, pool);
 
@@ -23,7 +23,10 @@ public class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1,
     public byte[] Write(Geometry geometry)
     {
         if (_writer is not ByteArrayWriter)
+        {
+            _writer.Dispose();
             _writer = new ByteArrayWriter(isLittleEndian, initialCapacity, pool);
+        }
 
         ((ByteArrayWriter)_writer).Reset();
 
@@ -37,7 +40,10 @@ public class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1,
     public void Write(Geometry geometry, Stream stream)
     {
         if (_writer is not StreamWriter)
+        {
+            _writer.Dispose();
             _writer = new StreamWriter(isLittleEndian, initialCapacity, pool);
+        }
 
         ((StreamWriter)_writer).Load(stream);
 
@@ -114,7 +120,7 @@ public class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1,
         if (!geometry.IsEmpty && geometry.OgcGeometryType != OgcGeometryType.Point)
             flags |= FlagHasBbox;
 
-        flags |= GeometryVersion << 6;
+        flags |= GeometryVersion;
         return flags;
     }
 
