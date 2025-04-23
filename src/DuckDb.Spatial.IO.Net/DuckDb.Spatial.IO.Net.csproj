@@ -4,6 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>DuckDB IO module for NTS</Title>
+    <Company>Samara-Informsputnik</Company>
+    <Authors>Nikolay Chupshev, Danila Glazkov</Authors>
+    <Copyright>Copyright © 2025 Samara-Informsputnik</Copyright>
+    <RepositoryUrl>https://github.com/sam-is/DuckDb.Spatial.IO.Net</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/sam-is/DuckDb.Spatial.IO.Net</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
