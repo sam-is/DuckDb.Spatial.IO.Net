@@ -1,6 +1,6 @@
-﻿namespace DuckDb.Spatial.ByteArray.Reader;
+﻿namespace DuckDb.Spatial.IO.Net.ByteArray.Reader;
 
-interface IReader
+internal interface IReader
 {
     public T Read<T>() where T : unmanaged;
     public void Reset();

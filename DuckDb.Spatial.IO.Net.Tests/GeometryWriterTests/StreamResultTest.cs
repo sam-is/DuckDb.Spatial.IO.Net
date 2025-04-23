@@ -1,8 +1,8 @@
-﻿using DuckDb.Spatial.Tests.Fixture;
+﻿using DuckDb.Spatial.IO.Net.Tests.Fixture;
 
-namespace DuckDb.Spatial.Tests.GeometryWriterTests;
+namespace DuckDb.Spatial.IO.Net.Tests.GeometryWriterTests;
 
-public class StreamResultTest(ServiceFixture fixture, DataFixture dataFixture): IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
+public class StreamResultTest(ServiceFixture fixture, DataFixture dataFixture) : IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
 {
     private readonly GeometryWriter _writer = fixture.GeometryWriter;
     private readonly GeometryReader _reader = new();

@@ -1,9 +1,9 @@
-﻿using DuckDb.Spatial.Tests.Fixture;
+﻿using DuckDb.Spatial.IO.Net.Tests.Fixture;
 using DuckDB.NET.Data;
 
-namespace DuckDb.Spatial.Tests.GeometryReaderTests;
+namespace DuckDb.Spatial.IO.Net.Tests.GeometryReaderTests;
 
-public class ByteArrayDbDataTest(ServiceFixture fixture, DataFixture dataFixture) : IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
+public class StreamDbDataTest(ServiceFixture fixture, DataFixture dataFixture) : IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
 {
     private readonly GeometryReader _reader = new();
 
@@ -22,14 +22,14 @@ public class ByteArrayDbDataTest(ServiceFixture fixture, DataFixture dataFixture
     {
         var expected = dataFixture.DbGeometries[id - 1];
 
-        var bytes = await ReadGeometry(id);
-        var geometry = _reader.Read(bytes);
+        await using var stream = await ReadGeometryStream(id);
+        var geometry = _reader.Read(stream);
 
         Assert.NotNull(geometry);
         Assert.Equal(expected, geometry);
     }
 
-    private async Task<byte[]> ReadGeometry(int id)
+    private async Task<Stream> ReadGeometryStream(int id)
     {
         const string query = "SELECT geom FROM test_table WHERE id=$Id";
         using var command = new DuckDBCommand(query, fixture.Connection);
@@ -39,11 +39,8 @@ public class ByteArrayDbDataTest(ServiceFixture fixture, DataFixture dataFixture
         parameter.Value = id;
         command.Parameters.Add(parameter);
 
-        await using var stream = (UnmanagedMemoryStream?)await command.ExecuteScalarAsync() ?? throw new InvalidOperationException("Invalid data in column");
+        var stream = (UnmanagedMemoryStream?)await command.ExecuteScalarAsync() ?? throw new InvalidOperationException("Invalid data in column");
 
-        using var memoryStream = new MemoryStream();
-        await stream.CopyToAsync(memoryStream);
-
-        return memoryStream.ToArray();
+        return stream;
     }
 }

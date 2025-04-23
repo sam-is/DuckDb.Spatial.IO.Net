@@ -1,6 +1,6 @@
 ﻿using DuckDB.NET.Data;
 
-namespace DuckDb.Spatial.Tests.Fixture;
+namespace DuckDb.Spatial.IO.Net.Tests.Fixture;
 
 public class ServiceFixture : IDisposable
 {

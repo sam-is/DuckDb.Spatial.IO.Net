@@ -1,10 +1,10 @@
-﻿using DuckDb.Spatial.Extension;
+﻿using DuckDb.Spatial.IO.Net.Extension;
 using System.Buffers;
 using System.Runtime.InteropServices;
 
-namespace DuckDb.Spatial.ByteArray.Writer;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
-public class ByteArrayWriter : IWriter
+internal class ByteArrayWriter : IWriter
 {
     private readonly bool _isLittleEndian;
     private byte[] _buffer;

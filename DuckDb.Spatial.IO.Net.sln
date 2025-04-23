@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35806.99 d17.13
+VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDb.Spatial", "DuckDb.Spatial\DuckDb.Spatial.csproj", "{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDb.Spatial.IO.Net", "DuckDb.Spatial.IO.Net\DuckDb.Spatial.IO.Net.csproj", "{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDb.Spatial.Tests", "DuckDb.Spatial.Tests\DuckDb.Spatial.Tests.csproj", "{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDb.Spatial.IO.Net.Tests", "DuckDb.Spatial.IO.Net.Tests\DuckDb.Spatial.IO.Net.Tests.csproj", "{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

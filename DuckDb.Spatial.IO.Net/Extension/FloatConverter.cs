@@ -1,6 +1,6 @@
-﻿namespace DuckDb.Spatial.Extension;
+﻿namespace DuckDb.Spatial.IO.Net.Extension;
 
-public static class FloatConverter
+internal static class FloatConverter
 {
     public static float DoubleToFloatDown(double d)
     {
@@ -34,7 +34,7 @@ public static class FloatConverter
 
         var bits = BitConverter.SingleToUInt32Bits(x);
         var direction = Math.Sign(y - x);
-        var delta = direction == 0 ? 0 : (direction > 0 ? 1u : uint.MaxValue);
+        var delta = direction == 0 ? 0 : direction > 0 ? 1u : uint.MaxValue;
 
         if (bits == 0 && direction < 0)
             return BitConverter.UInt32BitsToSingle(0x80000001);

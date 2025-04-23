@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DuckDb.Spatial\DuckDb.Spatial.csproj" />
+    <ProjectReference Include="..\DuckDb.Spatial.IO.Net\DuckDb.Spatial.IO.Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>

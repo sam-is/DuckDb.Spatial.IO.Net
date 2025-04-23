@@ -1,10 +1,10 @@
-﻿using DuckDb.Spatial.Extension;
+﻿using DuckDb.Spatial.IO.Net.Extension;
 using System.Buffers;
 using System.Runtime.InteropServices;
 
-namespace DuckDb.Spatial.ByteArray.Writer;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
-class StreamWriter : IWriter
+internal class StreamWriter : IWriter
 {
     private Stream? _stream;
     private readonly bool _isLittleEndian;

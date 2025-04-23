@@ -1,9 +1,9 @@
-﻿using DuckDb.Spatial.Extension;
+﻿using DuckDb.Spatial.IO.Net.Extension;
 using System.Runtime.InteropServices;
 
-namespace DuckDb.Spatial.ByteArray.Reader;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Reader;
 
-public class ByteArrayReader(bool isLittleEndian) : IReader
+internal class ByteArrayReader(bool isLittleEndian) : IReader
 {
     private int _offset = 0;
     private byte[] _data = [];
