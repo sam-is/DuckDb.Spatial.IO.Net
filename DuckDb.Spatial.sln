@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDb.Spatial", "DuckDb.Spatial\DuckDb.Spatial.csproj", "{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DuckDb.Spatial.Tests", "DuckDb.Spatial.Tests\DuckDb.Spatial.Tests.csproj", "{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F784F0D-F8B5-40A1-8B5B-A57586A96BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F335116-4022-46F1-8DD2-FE6B1D25E1A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B706641B-7957-4CDC-8886-65DD86231286}
+	EndGlobalSection
+EndGlobal
