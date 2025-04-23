@@ -6,7 +6,7 @@ using StreamWriter = DuckDb.Spatial.IO.Net.ByteArray.Writer.StreamWriter;
 
 namespace DuckDb.Spatial.IO.Net;
 
-public sealed class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 1, ArrayPool<byte>? pool = null) : IDisposable
+public sealed class GeometryWriter(bool isLittleEndian = true, int initialCapacity = 4096, ArrayPool<byte>? pool = null) : IDisposable
 {
     private const byte FlagHasZ = 0x01;
     private const byte FlagHasM = 0x02;
