@@ -1,17 +1,17 @@
-﻿using DuckDb.Spatial.Extension;
-using System.Buffers;
+﻿using System.Buffers;
 using System.Runtime.InteropServices;
+using DuckDb.Spatial.IO.Net.Extension;
 
-namespace DuckDb.Spatial.ByteArray.Writer;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
-public class ByteArrayWriter : IWriter
+internal class ByteArrayWriter : IWriter
 {
     private readonly bool _isLittleEndian;
     private byte[] _buffer;
     private readonly int _initialCapacity;
     private readonly ArrayPool<byte> _pool;
 
-    public int Offset { get; private set; }
+    private int Offset { get; set; }
 
     public ByteArrayWriter(bool isLittleEndian, int initialCapacity, ArrayPool<byte>? pool = null)
     {
@@ -69,7 +69,7 @@ public class ByteArrayWriter : IWriter
     {
         if (Offset + additionalBytes <= _buffer.Length) return;
 
-        int newCapacity = Math.Max(_buffer.Length * 2, Offset + additionalBytes);
+        var newCapacity = Math.Max(_buffer.Length * 2, Offset + additionalBytes);
         newCapacity = Math.Max(newCapacity, _initialCapacity);
 
         var newBuffer = _pool.Rent(newCapacity);

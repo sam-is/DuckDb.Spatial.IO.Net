@@ -1,10 +1,10 @@
-﻿using DuckDb.Spatial.Extension;
-using System.Buffers;
+﻿using System.Buffers;
 using System.Runtime.InteropServices;
+using DuckDb.Spatial.IO.Net.Extension;
 
-namespace DuckDb.Spatial.ByteArray.Writer;
+namespace DuckDb.Spatial.IO.Net.ByteArray.Writer;
 
-class StreamWriter : IWriter
+internal class StreamWriter : IWriter
 {
     private Stream? _stream;
     private readonly bool _isLittleEndian;
@@ -22,7 +22,7 @@ class StreamWriter : IWriter
 
     public void Write<T>(T value) where T : unmanaged
     {
-        int size = Marshal.SizeOf<T>();
+        var size = Marshal.SizeOf<T>();
         EnsureBuffer(size);
 
         if (BitConverter.IsLittleEndian != _isLittleEndian)

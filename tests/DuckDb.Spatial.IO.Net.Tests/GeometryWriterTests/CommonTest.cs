@@ -1,8 +1,8 @@
-﻿using DuckDb.Spatial.Tests.Fixture;
+﻿using DuckDb.Spatial.IO.Net.Tests.Fixture;
 
-namespace DuckDb.Spatial.Tests.GeometryWriterTests;
+namespace DuckDb.Spatial.IO.Net.Tests.GeometryWriterTests;
 
-public class StreamResultTest(ServiceFixture fixture, DataFixture dataFixture): IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
+public class CommonTest(ServiceFixture fixture, DataFixture dataFixture) : IClassFixture<ServiceFixture>, IClassFixture<DataFixture>
 {
     private readonly GeometryWriter _writer = fixture.GeometryWriter;
     private readonly GeometryReader _reader = new();
@@ -25,12 +25,8 @@ public class StreamResultTest(ServiceFixture fixture, DataFixture dataFixture): 
     {
         var geometry = dataFixture.Geometries[index];
 
-        using var memoryStream = new MemoryStream();
-
-        _writer.Write(geometry, memoryStream);
-        memoryStream.Position = 0;
-
-        var result = _reader.Read(memoryStream);
+        var bytes = _writer.Write(geometry);
+        var result = _reader.Read(bytes);
 
         Assert.Equal(geometry, result);
     }

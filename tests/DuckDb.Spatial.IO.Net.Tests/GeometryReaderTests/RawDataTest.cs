@@ -1,6 +1,6 @@
-using DuckDb.Spatial.Tests.Fixture;
+using DuckDb.Spatial.IO.Net.Tests.Fixture;
 
-namespace DuckDb.Spatial.Tests.GeometryReaderTests;
+namespace DuckDb.Spatial.IO.Net.Tests.GeometryReaderTests;
 
 public class RawDataTest(DataFixture dataFixture) : IClassFixture<DataFixture>
 {
